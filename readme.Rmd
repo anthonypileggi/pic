@@ -1,0 +1,66 @@
+---
+output:
+  github_document:
+    toc: true 
+    toc_depth: 3
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+---
+
+Package Is Cool
+---
+
+Oh hey, what a cool package!
+
+### Install pic
+
+```{r eval = FALSE}
+install.packages("devtools")
+devtools::install_github("anthonypileggi/pic")
+```
+
+### Take a pic
+
+R packages are cool.  And cool packages are the best.  That's so cool!
+
+```{r}
+library(pic)
+x <- pic("stringr")
+summary(x)
+```
+
+### Selfie
+
+```{r selfie}
+plot(x, type = "selfie")
+```
+
+Well whatdya know, that *is* pretty cool!
+
+### Friend pic
+
+Friends are cool too.  Hey, I bet cool packages have lots of friends!
+
+```{r friends}
+plot(x, type = "friends")
+```
+
+### Follower pic
+
+Everyone knows that cool packages with lots of friends have lots of followers.  Cool!
+
+```{r followers}
+plot(x, type = "followers", show_names = FALSE)
+```
+
+### TL;DR
+
+Well, I think we can all agree.  This **p**ackage **i**s **c**ool.
