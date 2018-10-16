@@ -19,7 +19,9 @@ pic <- function(pkg, type = c("selfie", "friends", "followers")) {
 selfie <- function(pkg) {
 
   # install/load package
-  library(pkg, character.only = TRUE)
+  if (!is.element(pkg, installed.packages()))
+    install.packages(pkg, repos = "http://cran.us.r-project.org")
+  library(pkg, character.only = TRUE, quietly = TRUE)
 
   # get a list of all functions
   funs <- pkg_funs(pkg)

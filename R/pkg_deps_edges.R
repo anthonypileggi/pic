@@ -11,8 +11,9 @@ pkg_deps_edges <- function(pkg, direction = c("in", "out")) {
   edges <- tibble::tibble(from = character(), to = character())
 
   # iterate to find all sub-dependencies
+  pkg_db <- available.packages(repos = "http://cran.us.r-project.org")
   while (pkgs_diff) {
-    d <- tools::package_dependencies(pkgs, reverse = reverse)
+    d <- tools::package_dependencies(pkgs, reverse = reverse, db = pkg_db)
     for (p in pkgs) {
       if (length(d[[p]]) > 0)
         edges <- rbind(edges, tibble::tibble(from = p, to = d[[p]]))
